@@ -1,0 +1,10 @@
+/* cascading classes */
+.cascade__light {
+	color: #333;
+	background-color: #eee;
+}
+
+.cascade__dark {
+	color: #fff;
+	background-color: #333;
+}

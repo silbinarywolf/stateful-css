@@ -1,0 +1,49 @@
+/* 
+ * Android <= 4.1.2 hack to fix pseudo-class + general/adjacent sibling selector
+ * 
+ *
+ * credit: https://codepen.io/TimPietrusky/pen/fHmiI
+ * 2012 by Tim Pietrusky
+ * timpietrusky.com
+ */
+body { -webkit-animation: android_four_bugfix infinite 1s; }
+@-webkit-keyframes android_four_bugfix { from {padding:0;} to {padding:0;} }
+
+/* hide checkboxes that control state only */
+body > [type="checkbox"] {
+	display: none;
+}
+
+/* make non-element buttons behave like buttons */
+[role="button"] {
+	cursor: pointer;
+	user-select: none;
+}
+
+/* additional core styles */
+nav > ol,
+nav > li {
+	list-style: none;
+}
+
+.container {
+	max-width: 1280px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+/* 
+ * row is lifted from Heydon's 2019 Flexbox Holy Albatross.
+ * http://www.heydonworks.com/article/the-flexbox-holy-albatross
+*/
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin: calc(var(--row-margin) * -1);
+}
+
+.row > * {
+	flex-grow: 1;
+	flex-basis: calc((40rem - 100%) * 999);
+	margin: var(--row-margin);
+}

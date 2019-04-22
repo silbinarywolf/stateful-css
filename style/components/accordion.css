@@ -1,0 +1,13 @@
+/* style */
+.accordion {
+	display: none;
+
+	background: blue;
+	width: 100px;
+	height: 100px;
+}
+
+/* state */
+input:checked ~ .accordion {
+	display: block;
+}

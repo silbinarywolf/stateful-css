@@ -1,0 +1,23 @@
+/* style */
+.menu {
+	display: none;
+
+	background: red;
+	width: 100px;
+	height: 100px;
+}
+
+/* initial state */
+.menu__button--is-open {
+	display: none;
+}
+
+/* state */
+[id="menu__is-open"]:checked ~ .app .menu,
+[id="menu__is-open"]:checked ~ .app .menu__button--is-open {
+	display: block;
+}
+
+[id="menu__is-open"]:checked ~ .app .menu__button--is-closed {
+	display: none;
+}
